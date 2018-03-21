@@ -31,14 +31,31 @@ function addition(a,b){
     console.log(a + b); 
 }
 /*
-Le hoisting de fonctions n'est valable que pour les déclarations de fonction et non pour les expressions de fonctions. 
-
+Le hoisting de fonctions n'est valable que pour les déclarations de fonction et non pour les expressions de fonctions.
 */
-addition2(a,b); 
-var addition2 = function(a,b){
-    console.log(a + b); 
-}
+// addition2(a,b); 
+// var addition2 = function(a,b){
+//     console.log(a + b); 
+// }
 
 
 console.log(x); 
 var x = 5;
+
+
+var perso = {
+    nom: "Yannick", 
+    sante: 150, 
+    force: 25, 
+    xp: 0, 
+    decrire:function(){
+        var description = this.nom + " a " + this.sante + " points de vie, "
+        + this.force + " en force et " + this.xp + " points d'experience"; 
+        return description; 
+    }
+};
+
+console.log(perso.decrire()); 
+
+var perso2 = Object.create(perso); 
+
