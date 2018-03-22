@@ -1,27 +1,4 @@
-//Les différents types de variables 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Les différents types de variables
 
 
 // Les booléens(boolean)
@@ -46,7 +23,7 @@ var a
 console.log(a); 
 
 /* Hoisting des fonctions 
-Bien que fonctionnant de manière séquentielle, JavaScript recherche d'abord les déclaration de fonctions et
+Bien que fonctionnant de manière séquentielle, JavaScript recherche d'abord les déclarations de fonctions et
 les fait monter dans le code (il les hisse d'où le nom de hoisting en anglais)
 */
 addition(5,7); 
