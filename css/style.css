@@ -1,0 +1,20 @@
+.primary{
+    display:flex; 
+    background:peachpuff;
+    flex-wrap: wrap; 
+}
+.red{
+    background:indianred;
+    
+}
+.blue{
+    background:darkslateblue;
+    
+}
+.yellow{
+    background: yellow; 
+    
+}
+.green{
+    background: #FDA403;
+}

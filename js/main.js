@@ -59,3 +59,95 @@ console.log(perso.decrire());
 
 var perso2 = Object.create(perso); 
 
+
+var Personnage = {
+    nom:"", 
+    sante:0, 
+    force:0, 
+    xp:0, 
+    decrire:function(){
+        var description = this.nom + " a " + this.sante + " points de vie, " + this.force + " en force et"
+        + this.xp +" points d'experience"; 
+        return description; 
+    }
+}; 
+
+var Personnage = {
+    init: function(nom,sante,force){
+        this.nom = nom;
+        this.sante = sante;
+        this.force = force;
+        this.xp = 0; 
+    }, 
+    decrire:function(){
+        var description = this.nom + " a " + this.sante + " points de vie, " + this.force + " en force et"
+        + this.xp +" points d'experience"; 
+        return description; 
+    }
+
+
+}; 
+
+var joueur1 = Object.create(Personnage); 
+joueur1.init("Yannick",200,40); 
+
+var joueur2 = Object.create(Personnage); 
+joueur2.init("Soukaina",210,30); 
+
+console.log(joueur1.decrire()); 
+console.log(joueur2.decrire()); 
+
+var Adversaire = Object.create(Personnage); 
+ Adversaire.initAdversaire = function(nom,sante,force,race,valeur){
+     this.init(nom,sante,force); 
+     this.race = race; 
+     this.valeur = valeur; 
+ }; 
+
+
+var monstre = Object.create(Adversaire); 
+monstre.initAdversaire("Vilain",130,100,"Kraken",45); 
+
+console.log("Un affreux monstre arrive: c'est un " + monstre.race + " nommé "+ monstre.nom);
+
+
+var BasicPerso = {
+    initPerso: function(nom,sante,force){
+        this.nom = nom; 
+        this.sante = sante; 
+        this.force = force; 
+    }, 
+    attaquer: function(cible){
+        if(this.sante > 0){
+            var degats = this.force; 
+            console.log(this.nom + " attaque " + cible.nom + " et lui fait " + degats + " points de dégâts"); 
+            cible.sante = cible.sante - degats; 
+
+            if(cible.sante > 0){
+                console.log(cible.nom + " a encore " + cible.sante + " points de vie"); 
+            } else {
+                cible.sante = 0; 
+                console.log(cible.nom + " est mort");  
+            }
+        } else {
+            console.log(cible.nom + " ne peut pas être attaqué : il est mort !!"); 
+        }    
+
+       }
+
+   }
+
+var joueur = Object.create(BasicPerso); 
+joueur.initJoueur = function(nom,sante,force){
+    this.initPerso(nom,sante,force); 
+    this.xp = 0; 
+}; 
+
+joueur.decrire = function(){
+    var description = this.nom + " a " + this.sante + " points de vie, " + this.force + " en force et " + this.xp + " points d'experience"; 
+    return description; 
+};
+
+var joueur1 = Object.create(joueur); 
+joueur1.initJoueur("Luqman",400,50); 
+console.log(joueur1.decrire()); 
