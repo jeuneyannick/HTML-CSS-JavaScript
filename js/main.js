@@ -1,5 +1,29 @@
 //Les différents types de variables 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Les booléens(boolean)
 console.log(true);
 console.log(false); 
@@ -103,10 +127,11 @@ var Adversaire = Object.create(Personnage);
      this.race = race; 
      this.valeur = valeur; 
  }; 
-
+ 
 
 var monstre = Object.create(Adversaire); 
 monstre.initAdversaire("Vilain",130,100,"Kraken",45); 
+console.log(monstre.decrire()); 
 
 console.log("Un affreux monstre arrive: c'est un " + monstre.race + " nommé "+ monstre.nom);
 
@@ -144,10 +169,52 @@ joueur.initJoueur = function(nom,sante,force){
 }; 
 
 joueur.decrire = function(){
-    var description = this.nom + " a " + this.sante + " points de vie, " + this.force + " en force et " + this.xp + " points d'experience"; 
+    var description = this.nom + " a " + this.sante + " points de vie , " + this.force + " en force et " + this.xp + " points d'experience"; 
     return description; 
 };
 
 var joueur1 = Object.create(joueur); 
 joueur1.initJoueur("Luqman",400,50); 
 console.log(joueur1.decrire()); 
+
+var joueur2 = Object.create(joueur);
+joueur2.initJoueur("Rahim", 380,50); 
+
+
+console.log("Bienvenue dans ce jeu d'aventure ! Voici nos courageux héros"); 
+console.log(joueur1.decrire()); 
+console.log(joueur2.decrire()); 
+
+var Zorg = Object.create(Adversaire);
+Zorg.initAdversaire("Zorg",200,40,"Vampire",30); 
+
+console.log(Zorg.decrire())
+
+
+joueur1.attaquer(Zorg); 
+
+
+    Zorg.attaquer = function(cible) {
+        if(this.sante > 0){
+            var degats = this.force; 
+            console.log(this.nom + " attaque " + cible.nom + " et lui fait " + degats + " points de dégats"); 
+            cible.sante = cible.sante - degats; 
+
+            if(cible.sante > 0){
+                console.log( cible.nom + " s'est fait attaqué mais a encore " + cible.sante + " de points de vie"); 
+            } else {
+                cible.sante = 0; 
+                console.log(cible.nom + " s'est fait attaqué et a perdu tous ses points de vie."); 
+            } 
+
+        } else {
+            console.log( cible.nom + " est déja mort ! ne t'acharne pas"); 
+        }
+    }
+
+console.log(Zorg.decrire());  
+
+Zorg.attaquer(joueur2); 
+Zorg.attaquer(joueur1); 
+
+ 
