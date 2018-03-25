@@ -78,7 +78,7 @@ savant2.init("Al Ghazali","Shafi'ite","Tasawwuf");
 savant3.init("Shah WaliuLllah Ad Dahlawi","Hanafite","Aqida");
 savant4.init("Ahmad Zarruq","Malikite","Tasawwuf");
 
-var savants = [savant1, savant2, savant3, savant4 ]; 
+var savants = [savant1, savant2, savant3, savant4]; 
 
 
 
