@@ -18,7 +18,7 @@ titreElt.classList.add("titre");
 /*
 L'ajout d'un nouvel élément se fait en 3 étapes: 
 1.Création d'un nouvel élément
-2.Définitions des informations de l'élément
+2.Définitions des informations de l'élément//
 3.Insertion de l'élément dans le DOM
 */
 
@@ -64,3 +64,14 @@ bashElt.textContent += "Bash";
 document.getElementById("langages").replaceChild(bashElt, perlElt);// replaceChild()permet de remplacer un élément en prenant en paramètre le nouvel élement puis l'ancien à remplacer
 document.getElementById("langages").removeChild(bashElt); //removeChlid permet de supprimer un élément en prenant en paramètres le noeud à supprimer du DOM
 
+
+////Exercices///
+
+var pElt = document.createElement("p");
+var lienElt = document.createElement("a");
+lienElt.href = "https://fr.wikipedia.org/wiki/Liste_des_langages_de_programmation";
+lienElt.textContent = "liste";
+pElt.appendChild(document.createTextNode("En voici une "));
+pElt.appendChild(lienElt);
+pElt.appendChild(document.createTextNode(" plus complète."));
+document.getElementById("contenu").appendChild(pElt);
