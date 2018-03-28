@@ -26,13 +26,32 @@ var listeLiens = [
 
 // TODO : compléter ce fichier pour ajouter les liens à la page web
 
-var contenu = document.getElementById("contenu");//On cible la div
-var ul = document.createElement("ul");//Creation d'un ul 
-var li = document.createElement("li");//Creation d'un li
-
 listeLiens.forEach(function(lien){
-    var a = document.createElement("a"); 
-     a.textContent = lien.url; 
-     contenu.appendChild(a); 
-     console.log(a)
-})
+    //ciblage de l'éléménet du DOM
+    var contenu = document.getElementById("contenu");
+
+    //Création des nouveaux élements 
+    var divLink = document.createElement("div"); 
+    var link = document.createElement("a"); 
+    var str = document.createElement("strong")
+    var spanElt = document.createElement("span")
+    
+    // Assignation d'attributs aux élements creés 
+    divLink.classList.add("lien"); 
+    link.href = lien.url;
+
+    //Insertion du contenu textuel dans les élements creés
+    link.textContent = lien.titre;
+    spanElt.textContent = "Ajouté par " + lien.auteur;
+
+    // Ajout du style
+    link.style.textDecoration = "none"; 
+    link.style.color = "#428bca";
+    
+    //Insertion des élements entre eux avant l'ajout dans la page
+    str.appendChild(link) 
+    divLink.appendChild(str); 
+    divLink.innerHTML += " " + lien.url + "<br/>";
+    divLink.appendChild(spanElt); 
+    contenu.appendChild(divLink); 
+}); 
