@@ -72,3 +72,54 @@ function getBoutonSouris(code){
  }
 
  document.addEventListener("click", infosSouris)
+
+ //Geston de l'appui et du relâchement d'un bouton de la souris 
+ //mousedown et mouseup sont des evenements pour detecter l'appui et le relachement d'un bouton de la souris
+
+ document.addEventListener("mousedown", infosSouris);
+ document.addEventListener("mouseup", infosSouris);
+
+ //Gestion de la fin du chargement de la page web 
+// window.addEventListener("load", function(){
+//     console.log("Page entièrement chargée"); 
+// }); 
+
+// Gestion de la fermeture de la page web pour envoyer une confirmation 
+/*
+La page web se ferme lorsque l'utilisateur ferme l'onglet ou navigue sur une autre page dans cet onglet. 
+*/
+
+window.addEventListener("beforeunload", function(e){
+    var message = "On est bien ici !"; 
+    e.returnValue = message; // Provoque une demande de confirmation (standard)
+    return message; // Provoque une demande de confirmation (certains navigateurs)
+}); 
+
+
+//La propagation des evenements 
+
+//Gestion du clic sur le document 
+// document.addEventListener("click", function(){
+//     console.log("Gestionnaire document"); 
+// }); 
+//Gestion du clic sur le paragaraphe 
+document.getElementById("para").addEventListener("click", function(){
+    console.log("Gestionnaire paragraphe"); 
+}); 
+//Gestion du clic sur le bouton 
+document.getElementById("propa").addEventListener("click", function(e){
+    console.log("Gestionnaire bouton"); 
+    e.stopPropagation();//Arrêt de la propagation de l'évenement
+})
+
+
+//Modifier le comportement par défaut en cas d'evenements 
+/*
+La méthode preventDefault sur l'objet Event permet d'annuler le comportement par défaut de l'action liée à un evenement
+*/ 
+
+//Gestion du clic sur le lien interdit 
+document.getElementById("interdit").addEventListener("click", function(e){
+    console.log("Arrête de faire du Javascript pour rien"); 
+    e.preventDefault(); //Annulation de la navigation vers la cible du lien 
+})
