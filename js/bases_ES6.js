@@ -6,10 +6,10 @@ On ne peut pas changer sa valeur. C'est une "constante"
 const x = {app : "Ceci est mon application"}; 
 x.app = "Ceci est ma nouvelle application"; 
 x.app3 = " Voici une autre application"; 
-x. app3 = " une autre application"; 
+x.app3 = " une autre application"; 
 console.log(x)
 /*
-Attention : On ne peut assigner une valeur à const qu'une seule fois. Cependant dans si c'est un objet on peut 
+Attention : On ne peut assigner une valeur à const qu'une seule fois. Cependant si c'est un objet on peut 
 modifier les propriétés. Mais on ne peut pas lui assigner un nouvel objet ou un nouveau type. 
 */
 /*
