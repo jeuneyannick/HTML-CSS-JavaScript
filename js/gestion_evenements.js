@@ -22,7 +22,7 @@ document.getElementById("bouton").addEventListener("click", function (e){
 document.addEventListener("keypress", function(e){
     console.log("Vous avez appuyé sur la touche " + String.fromCharCode(e.charCode));
     /*
-    keypress est l'evenement à déclencher 
+    keypress est l'evenement à déclencher. 
     e désigne l'objet EVENT que le déclenchement de l'evenement a crée 
     charCode est une propriété de Event qui récupère le caractère associé à la touche appuyée.
     String.fromCharCode est une méthode qui traduit la valeur récupérée par charCode en une chaine représentant le caractère.
@@ -99,9 +99,9 @@ window.addEventListener("beforeunload", function(e){
 //La propagation des evenements 
 
 //Gestion du clic sur le document 
-// document.addEventListener("click", function(){
-//     console.log("Gestionnaire document"); 
-// }); 
+ document.addEventListener("click", function(){
+     console.log("Gestionnaire document"); 
+ }); 
 //Gestion du clic sur le paragaraphe 
 document.getElementById("para").addEventListener("click", function(){
     console.log("Gestionnaire paragraphe"); 
@@ -109,7 +109,7 @@ document.getElementById("para").addEventListener("click", function(){
 //Gestion du clic sur le bouton 
 document.getElementById("propa").addEventListener("click", function(e){
     console.log("Gestionnaire bouton"); 
-    e.stopPropagation();//Arrêt de la propagation de l'évenement
+    // e.stopPropagation();//Arrêt de la propagation de l'évenement
 })
 
 

@@ -1,0 +1,11 @@
+#cadre{
+    border: 1px solid red; 
+}
+
+#bloc{
+    width: 20px; 
+    height: 40px; 
+    background: indianred; 
+    position:relative; /* Permettra de décaler le bloc */
+    left:0px; 
+}

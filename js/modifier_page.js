@@ -42,7 +42,7 @@ document.getElementById("langages").appendChild(rubyElt);
 var perlElt = document.createElement("li"); 
 perlElt.id = "perl"; 
 perlElt.textContent += "Perl"; 
-document.getElementById("langages").insertBefore(perlElt, document.getElementById("php"));// la méthode insertBefore prendre en paramètre le noeud à ajouter et le noeud avant lequel le nouveau sera passé.
+document.getElementById("langages").insertBefore(perlElt, document.getElementById("php"));// la méthode insertBefore prend en paramètre le noeud à ajouter et le noeud avant lequel le nouveau sera passé.
 
 
 // Ajouter un noeud de manière plus précise avec la méthode insertAdjacentHTML()
